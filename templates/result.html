@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Rate Prediction</title>
+    <link rel="icon" href="static/images/favicon.png" type="image/png">
+    
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+.ai-box {
+    background: #faf9f6;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+.ai-box h3, .ai-box h2 {
+    color: #0b3d91;
+    margin-bottom: 10px;
+}
+
+.ai-box ul, .ai-box ol {
+    margin-left: 20px;
+}
+
+.ai-box strong {
+    color: #333;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class = "title">Crime Rate Predictor</h1>
+        <h2 class = "tagline">Unlock safety: Reduce crime rate together</h2>
+    </header>       
+    
+    <section class="prediction">
+        <table class="table2">
+            <tr class="r1">
+                <td class="label">
+                    <label>Selected City Name :</label>
+                </td>
+                <td class="sel">
+                    <select>
+                        <option value="selected">{{city_name}}</option>
+                 </td>
+            </tr>
+            <tr class="r1">
+                <td class="label">
+                    <label>Selected Crime Type :</label>
+                </td>
+                <td class="sel">
+                    <select >
+                        <option value="selected">{{crime_type}}</option>
+                </td>
+            </tr>
+            <tr class="r1">
+                <td class="label">
+                    <label>Selected Year :</label>
+                </td>
+                <td class="sel">
+                    <select>
+                        <option value="selected">{{year}}</option>
+                </td>
+            </tr>
+        </table>
+
+        <table class="table3">         
+            
+            <tr class="r2""> 
+                <td class="result">Prediction :</td>
+                <td class="result">{{crime_status}}</td>
+            </tr>
+            <tr class="r2">
+                <td class="result">Estimated Crime Rate :</td>
+                <td class="result">{{crime_rate}}</td>
+            </tr>
+            <tr class="r2">
+                <td class="result">Estimated Number of Cases :</td>
+                <td class="result">{{cases}}</td>
+            </tr>
+            <tr class="r2">
+                <td class="result">Population (in Lakhs) :</td>
+                <td class="result">{{population}}</td>
+            </tr>
+        </table>
+        <h2>Crime Heatmap</h2>
+<iframe src="{{ heatmap }}" width="100%" height="450" style="border:none;">
+
+</iframe>
+
+        <h2 class="text-center">AI Insights</h2>
+         <div class="ai-box">
+    {{ ai_insights|safe }}
+</div>
+
+
+
+        <div class="button2" >
+            <a href="http://127.0.0.1:5000">
+                <input type="submit" class="btn id="check_again"" value="Let's Check Again" >
+            </a>            
+        </div> 
+        
+    </section>
+
+
+</body>
+</html>

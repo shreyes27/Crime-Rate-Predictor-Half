@@ -158,6 +158,9 @@ def predict_result ():
 
     return render_template('result.html', city_name=city_name, crime_type=crime_type, year=year, crime_status=crime_status, crime_rate=crime_rate, cases=cases, population=pop, ai_insights=ai_insights, heatmap=heatmap_path)
 
-if __name__ == '__main__':
-    # app.run (debug = False, host='0.0.0.0', port=5000) 
-    app.run(debug = False)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
+
